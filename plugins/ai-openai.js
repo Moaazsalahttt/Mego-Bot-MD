@@ -9,7 +9,7 @@ const openaiii = new OpenAIApi(configuration)
 var handler = async (m, { conn, text, usedPrefix, command }) => {
 
 if (usedPrefix == 'a' || usedPrefix == 'A') return
-if (!text) return conn.reply(m.chat, `*🎌 ادخل الطلب للرد عليك*\n\nمثال: !ميجو هات معلومعات عن الانمي\n\n  ❗ معلومه اذا ارسل اليك المعلومه بالانجليزي يمكنك ترجمتها عن طريق .ترجم ar`, m, fake)
+if (!text) return conn.reply(m.chat, `*what...¿*\n\n اكتب الي انت عايزه وقبله xm.\n\nوبس يروحي🚀`, m, fake)
 
 try {
 conn.sendPresenceUpdate('composing', m.chat)
@@ -17,7 +17,7 @@ conn.sendPresenceUpdate('composing', m.chat)
 // Traducir de indonesio a Arabic
 const translation = await translate(text, { from: 'en', to: 'ar' })
 const indonesianText = translation.text
-let syms = `مطوري هو ميججؤؤ`
+let syms = هعععع عايز اي`
 let res = await openaiii.ChatGpt(indonesianText, syms)
 
 await m.reply(res.text)
@@ -34,13 +34,13 @@ let hasill = await tioress.json()
 conn.reply(m.chat, `${hasill.result}`, m, fake, )
 } catch (err) {
 console.error(err)
-conn.reply(m.chat, '🚩 *خطأ*', m, fake, )
+conn.reply(m.chat, '❗️❌ *wing*', m, fake, )
 }
 }}
 
 }
 handler.help = ['ia']
 handler.tags = ['ai']
-handler.command = ['ميجو', 'chatgpt', 'ia', 'بوت']
+handler.command = ['xm', 'chatgpt', 'ia', 'بوت']
 
 export default handler
