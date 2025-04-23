@@ -19,7 +19,7 @@ let quranSurahHandler = async (m, { conn }) => {
     );
 
     if (!surahData) {
-      throw new Error(`تعذر العثور على سورة برقم أو اسم "${surahInput}"`);
+      throw new Error(`🙂نتأسف لم يتم العثور علي الصوره "${surahInput}"`);
     }
 
     let res = await fetch(`https://quran-endpoint.vercel.app/quran/${surahData.number}`);
