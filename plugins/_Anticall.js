@@ -7,14 +7,14 @@ export async function before(m, { conn, isAdmin, isBotAdmin, isOwner, isROwner }
   if (!bot.antiCall) return;
 
   // Create a message mentioning the sender of the incoming message.
-  const edtr = `🧙‍♂️ @${m.sender.split('@')[0]} 🧙‍♂️`;
+  const edtr = ` @${m.sender.split('@')[0]} `;
 
   // Define different message types and their corresponding messages.
   const messageType = {
-    40: '📞 You missed a voice call, and the call has been missed.',
-    41: '📹 You missed a video call, and the call has been missed.',
-    45: '📞 You missed a group voice call, and the call has been missed.',
-    46: '📹 You missed a group video call, and the call has been missed.'
+    40: ' تم التصال فيديو, تم الاتصال .',
+    41: ' تم التصال فيديو, تم الاتصال',
+    45: ' تم التصال فيديو, تم الاتصال.',
+    46: ' تم التصال فيديو, تم الاتصال.'
   }[m.messageStubType];
 
   // If a message type is found, send a message to the chat.
